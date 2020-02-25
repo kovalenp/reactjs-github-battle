@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 function LanguagesNav({ selected, onUpdateLanguage }) {
 
-  const languages = ['All', 'Javascript', 'Java', 'Python', '.Net']
+  const languages = ['All', 'Javascript', 'CSS', 'Python', 'Java']
 
   return (
     <ul className='flex-center'>
