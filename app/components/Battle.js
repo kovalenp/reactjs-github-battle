@@ -2,6 +2,7 @@ import React from 'react'
 import PlayerInput from './PlayerInput'
 import Instructions from './Instructions'
 import PlayerPreview from './PlayerPreview'
+import Results from './Results'
 
 export default class Battle extends React.Component {
 
@@ -10,6 +11,7 @@ export default class Battle extends React.Component {
     this.state = {
       playerOne: null,
       playerTwo: null,
+      battle: false,
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -25,11 +27,17 @@ export default class Battle extends React.Component {
   }
 
   render() {
-    const { playerOne, playerTwo } = this.state
+    const { playerOne, playerTwo, battle } = this.state
+
+    if (battle) {
+      return <Results playerOne={playerOne} playerTwo={playerTwo} />
+    }
 
     return (
       <React.Fragment>
+
         <Instructions />
+
         <div className='players-container'>
           <h1 className='center-text header-lg'>Players</h1>
           <div className='row space-around'>
@@ -42,7 +50,15 @@ export default class Battle extends React.Component {
               : <PlayerPreview label='Player Two' onReset={() => this.handleReset('playerTwo')} username={playerTwo} />
             }
           </div>
+
+          {playerOne && playerTwo && (
+            <button className='btn dark-btn btn-space' onClick={() => this.setState({ battle: true })}>
+              Battle
+              </button>
+          )}
+
         </div>
+
       </React.Fragment>
     )
   }
