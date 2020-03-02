@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Card from './Card'
 
 import { FaUser, FaStar, FaCodeBranch, FaExclamationTriangle } from 'react-icons/fa'
+import Tooltip from './Tooltip';
 
 function ReposGrid({ repos }) {
   return (
@@ -21,10 +22,12 @@ function ReposGrid({ repos }) {
             >
               <ul className='card-list'>
                 <li>
-                  <FaUser color='rgb(255, 191, 116)' size={22} />
-                  <a href={`https://github.com/${login}`}>
-                    {login}
-                  </a>
+                  <Tooltip text='Username'>
+                    <FaUser color='rgb(255, 191, 116)' size={22} />
+                    <a href={`https://github.com/${login}`}>
+                      {login}
+                    </a>
+                  </Tooltip>
                 </li>
                 <li>
                   <FaStar color='rgb(255, 215, 0)' size={22} />
