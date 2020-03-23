@@ -4,6 +4,7 @@ import Instructions from './Instructions'
 import PlayerPreview from './PlayerPreview'
 import Results from './Results'
 
+
 export default class Battle extends React.Component {
 
   constructor(props) {
@@ -58,7 +59,7 @@ export default class Battle extends React.Component {
           {playerOne && playerTwo && (
             <button className='btn dark-btn btn-space' onClick={() => this.setState({ battle: true })}>
               Battle
-              </button>
+            </button>
           )}
 
         </div>
