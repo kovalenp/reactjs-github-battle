@@ -7,33 +7,22 @@ import { Link } from 'react-router-dom'
 
 export default class Battle extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      playerOne: null,
-      playerTwo: null,
-    }
-
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleReset = this.handleReset.bind(this)
+  state = {
+    playerOne: null,
+    playerTwo: null,
   }
 
-  handleSubmit(id, player) {
-    this.setState({ [id]: player })
-  }
 
-  handleReset(id) {
-    this.setState({ [id]: null })
-  }
+  handleSubmit = (id, player) => this.setState({ [id]: player })
+
+  handleReset = (id) => this.setState({ [id]: null })
 
   render() {
     const { playerOne, playerTwo } = this.state
 
     return (
       <React.Fragment>
-
         <Instructions />
-
         <div className='players-container'>
           <h1 className='center-text header-lg'>Players</h1>
           <div className='row space-around'>
@@ -58,9 +47,7 @@ export default class Battle extends React.Component {
               Battle
             </Link>
           )}
-
         </div>
-
       </React.Fragment>
     )
   }

@@ -15,14 +15,8 @@ const styles = {
 
 class Loader extends Component {
 
-  constructor(props) {
-    super(props)
 
-    this.state = {
-      content: props.text
-    }
-  }
-
+  state = { content: this.props.text }
 
   componentDidMount() {
 
