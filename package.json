@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "NODE_ENV='production' webpack",
+    "build-win": "SET NODE_ENV='production' && webpack",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint app/*/*.js",
-    "precommit": "lint-staged"
+    "precommit": "SET NODE_ENV='production' && lint-staged"
   },
   "author": "",
   "license": "ISC",

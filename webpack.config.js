@@ -1,5 +1,5 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './app/index.js',
@@ -12,15 +12,12 @@ module.exports = {
     rules: [
       { test: /\.(js)$/, use: 'babel-loader' },
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
-
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({ template: 'app/index.html' })
-  ],
-  mode: 'development',
-  devtool: 'source-map',
+  plugins: [new HtmlWebpackPlugin({ template: 'app/index.html' })],
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+  // devtool: 'source-map',
   devServer: {
     historyApiFallback: true,
   },
-}
+};
