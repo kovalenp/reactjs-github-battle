@@ -1,8 +1,8 @@
-import React from 'react'
-import PlayerInput from './PlayerInput'
-import Instructions from './Instructions'
-import PlayerPreview from './PlayerPreview'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PlayerInput from './PlayerInput';
+import Instructions from './Instructions';
+import PlayerPreview from './PlayerPreview';
 
 
 export default class Battle extends React.Component {
@@ -18,10 +18,10 @@ export default class Battle extends React.Component {
   handleReset = (id) => this.setState({ [id]: null })
 
   render() {
-    const { playerOne, playerTwo } = this.state
+    const { playerOne, playerTwo } = this.state;
 
     return (
-      <React.Fragment>
+      <>
         <Instructions />
         <div className='players-container'>
           <h1 className='center-text header-lg'>Players</h1>
@@ -48,7 +48,7 @@ export default class Battle extends React.Component {
             </Link>
           )}
         </div>
-      </React.Fragment>
-    )
+      </>
+    );
   }
 }

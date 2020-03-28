@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaUserFriends, FaFighterJet, FaTrophy } from 'react-icons/fa'
-import { ThemeConsumer } from '../contexts/theme'
+import { FaUserFriends, FaFighterJet, FaTrophy } from 'react-icons/fa';
+import { ThemeConsumer } from '../contexts/theme';
 
 function Instructions() {
   return (
@@ -27,7 +27,7 @@ function Instructions() {
         </div>
       )}
     </ThemeConsumer>
-  )
+  );
 }
 
 export default Instructions;

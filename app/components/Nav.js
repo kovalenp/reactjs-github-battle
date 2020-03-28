@@ -1,10 +1,10 @@
-import React from 'react'
-import { ThemeConsumer } from '../contexts/theme'
-import { NavLink } from 'react-router-dom'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { ThemeConsumer } from '../contexts/theme';
 
 const activeStyle = {
   color: 'rgb(187, 46, 31)'
-}
+};
 
 export default function Nav() {
   return (
@@ -40,5 +40,5 @@ export default function Nav() {
         </nav>
       )}
     </ThemeConsumer>
-  )
+  );
 }

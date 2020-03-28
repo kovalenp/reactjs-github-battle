@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types'
-import { ThemeConsumer } from '../contexts/theme'
+import PropTypes from 'prop-types';
+import { ThemeConsumer } from '../contexts/theme';
 
 class PlayerInput extends Component {
 
   state = { username: '' }
 
   handleSubmit = (event) => {
-    event.preventDefault()
-    this.props.onSubmit(this.state.username)
+    event.preventDefault();
+    this.props.onSubmit(this.state.username);
   }
 
   handleChange = (event) => {
-    event.preventDefault()
-    this.setState({ username: event.target.value })
+    event.preventDefault();
+    this.setState({ username: event.target.value });
   }
 
   render() {
@@ -45,14 +45,14 @@ class PlayerInput extends Component {
           </form>
         )}
       </ThemeConsumer>
-    )
+    );
   }
 }
 
 PlayerInput.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
-}
+};
 
 export default PlayerInput;
 
