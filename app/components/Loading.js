@@ -13,7 +13,7 @@ const styles = {
   }
 }
 
-class Loader extends Component {
+class Loading extends Component {
 
 
   state = { content: this.props.text }
@@ -42,13 +42,13 @@ class Loader extends Component {
   }
 }
 
-Loader.propTypes = {
+Loading.propTypes = {
   text: PropTypes.string.isRequired,
 }
 
-Loader.defaultProps = {
+Loading.defaultProps = {
   text: 'Loading',
   speed: 300
 }
 
-export default Loader
+export default Loading

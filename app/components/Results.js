@@ -6,7 +6,7 @@ import queryString from 'query-string'
 import { battle } from '../utils/api'
 import Card from './Card'
 import ProfileList from './ProfileList'
-import Loader from './Loader'
+import Loading from './Loading'
 
 
 export default class Results extends React.Component {
@@ -40,7 +40,7 @@ export default class Results extends React.Component {
     const { winner, loser, error, loading } = this.state
 
     if (loading === true) {
-      return <Loader text='Fighting' />
+      return <Loading text='Fighting' />
     }
 
     if (error) {
