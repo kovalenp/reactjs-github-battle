@@ -32,7 +32,7 @@ function getRepos(username) {
 
 function getStarCount(repos) {
   return repos.reduce(
-    (count, { stargazersCount }) => count + stargazersCount,
+    (count, { stargazers_count }) => count + stargazers_count,
     0
   );
 }
